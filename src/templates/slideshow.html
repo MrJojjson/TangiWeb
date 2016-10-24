@@ -1,0 +1,126 @@
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+        dots[i].style.backgroundColor = "#b1b1b1";
+    }
+    slideIndex++;
+    
+    if (slideIndex> slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "flex"; 
+    dots[slideIndex-1].style.backgroundColor = "#4a4a4a";
+
+    setTimeout(showSlides, 4000); 
+}
+</script>
+
+
+<div class="innerElement">
+    <div class="innerElementHeader">
+        <a>
+            Block slideshow
+        </a>
+    </div>
+    <div class="innerElementImage" >
+        <!--<img src="img/slideShow.jpeg">-->
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="img/Bird.png">
+
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="img/Sloth.png">
+
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="img/Tucan.png">
+
+          </div>
+            
+        </div>
+        
+         <div class="dotClass">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        <div class="nextRightDiv">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+            </div>
+        <br>
+
+       
+    </div>
+       <div class="horizontalLine">
+        </div>
+    <div class="innerElementText">
+        <div class="innerElementExplainText">
+            <h4>Explanatory text:</h4>
+            <a>
+               To show a simple slideshow in HTML code, the tag &lt;div&gt; can be used which holds the different images. To show the image the &lt;img&gt; tag is placed within the &lt;div&gt; tag.  In order to select which image to show, the &lt;img&gt; tag is combined with “src”, which is a HTML word for “search”.  Example below with two images:
+            </a>
+        </div>
+        <div class="innerElementCodeText">
+           <!-- &emsp; = tab, &lt; = <, &gt; = > -->
+            <h4>How it looks in HTML:</h4>
+            <p>  
+            &lt;div class="slideshow-container"&gt;<br/>
+          &emsp;&emsp;&lt;div class="mySlides fade"&gt;<br/>
+           &emsp;&emsp;&emsp;&emsp; &lt;div class="numbertext"&gt;1 / 2&lt;/div&gt;<br/>
+            &emsp;&emsp;&emsp;&emsp;&lt;img src="img/Bird.png"&gt;<br/>
+
+          &emsp;&emsp;&lt;/div&gt;<br/>
+
+          &emsp;&emsp;&lt;div class="mySlides fade"&gt;<br/>
+           &emsp;&emsp;&emsp;&emsp; &lt;div class="numbertext"&gt;2 / 2&lt;/div&gt;<br/>
+            &emsp;&emsp;&emsp;&emsp;&lt;img src="img/Sloth.png"&gt;<br/>
+&emsp;&emsp;&lt;/div&gt;<br/>
+     
+ &lt;/div&gt;<br/>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    //maybe must send id
+    // maybe must all have a unique class
+
+    $(document.body).on("renderTheme", function (e){
+$('#'+ e.id).find('.slideshow').text("Test");
+        /*if(e.hasOwnProperty("themeRemoved")){
+            $('.'+ e.themeName).find('.slideshow').text("INGENTING");
+        }
+
+        else if(e.theme > 0){ //Do stuff if theme exists
+            if(e.hasOwnProperty("id")){
+                $('#'+ e.id).find('.slideshow').text("SLIDESHOW");
+            } else if (e.hasOwnProperty("themeName")){
+                $( "."+ e.themeName).find(".slideshow").text("SLIDESHOW");
+            }
+        }*/
+        /*else {
+            
+        }*/
+
+        // if has id
+        // render unique id
+        // if has theme
+        // render all with theme
+        // else (no theme no id
+        //render only with color
+    });
+</script>
